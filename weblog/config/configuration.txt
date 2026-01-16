@@ -1,4 +1,5 @@
 // Weblog Configuration
+// Synced via GitHub Actions → omg.lol API
 
 ;; About your weblog
 ;; -----------------
