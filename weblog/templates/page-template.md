@@ -22,7 +22,7 @@ Title: Page Template
 	--link: #0b7285;
 	--accent: #6b7280;
 	--purple: #9775fa;
-	--card-bg: rgba(235, 230, 245, 0.85);
+	--card-bg: rgba(255, 255, 255, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,7 +32,7 @@ Title: Page Template
 		--link: #67e8f9;
 		--accent: #9ca3af;
 		--purple: #c4b5fd;
-		--card-bg: rgba(40, 30, 50, 0.85);
+		--card-bg: rgba(0, 0, 0, 0.5);
 	}
 }
 
