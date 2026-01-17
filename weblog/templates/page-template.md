@@ -18,29 +18,43 @@ Title: Page Template
 
 :root {
 	--foreground: #212529;
-	--background: #f8f9fa;
+	--background: transparent;
 	--link: #0b7285;
-	--accent: #868e96;
+	--accent: #6b7280;
+	--purple: #9775fa;
+	--card-bg: rgba(235, 230, 245, 0.85);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--foreground: #eee;
-		--background: #222;
-		--link: #99e9f2;
-		--accent: #ced4da;
+		--background: transparent;
+		--link: #67e8f9;
+		--accent: #9ca3af;
+		--purple: #c4b5fd;
+		--card-bg: rgba(40, 30, 50, 0.85);
 	}
 }
 
-* {
-	box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
 	font-family: 'Lato', sans-serif;
 	font-size: 120%;
 	color: var(--foreground);
-	background: var(--background);
+	background: linear-gradient(135deg, #c084fc 0%, #a78bfa 25%, #7dd3fc 75%, #22d3ee 100%);
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+.container {
+	max-width: 50em;
+	margin: 3em auto;
+	padding: 2em 2.5em;
+	background: var(--card-bg);
+	border-radius: 1.5em;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 header nav ul {
@@ -64,30 +78,28 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 1rem 0;
 }
 
-p, li {
-	line-height: 160%;
-}
+p, li { line-height: 160%; }
 
 header, main, footer {
-	max-width: 60em;
-	margin: 2em auto;
-	padding: 0 1em;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
-header {
-	margin-top: 4em;
-}
+header { margin-bottom: 1.5em; }
 
 footer p {
-	margin-top: 5em;
+	margin-top: 3em;
 	font-size: 90%;
 	text-align: center;
 }
 
-a:link { color: var(--link); }
-a:visited { color: var(--link); }
-a:hover { color: var(--link); }
-a:active { color: var(--link); }
+a:link, a:visited, a:hover, a:active { color: var(--link); }
+
+.weblog-title a {
+	text-decoration: none;
+	color: var(--foreground);
+}
 
 .post-info, .post-tags {
 	font-size: 85%;
@@ -101,7 +113,7 @@ a:active { color: var(--link); }
 
 .tag {
 	background: var(--accent);
-	color: var(--background) !important;
+	color: var(--card-bg) !important;
 	padding: .3em .4em;
 	margin: .8em 0 0 .4em;
 	border-radius: .5em;
@@ -112,7 +124,7 @@ a:active { color: var(--link); }
 hr {
 	border: 0;
 	height: 1px;
-	background: #333;
+	background: var(--accent);
 	margin: 2em 0;
 }
 
@@ -120,7 +132,7 @@ code {
 	padding: .2em .3em;
 	border: 1px solid var(--accent);
 	white-space: pre-wrap;
-	word-wrap: break-word; 
+	word-wrap: break-word;
 }
 
 pre, code {
@@ -129,53 +141,49 @@ pre, code {
 }
 
 pre code {
-	background:  #000;
-	color:  #eee;
+	background: #000;
+	color: #eee;
 	display: inline-block;
 	padding: 1em;
 	white-space: pre-wrap;
-	word-wrap: break-word;   
+	word-wrap: break-word;
 }
 
-img {
-	max-width: 100%;
-}
+img { max-width: 100%; }
 
-table {
-	border-collapse: collapse;
-}
+table { border-collapse: collapse; }
 
 td, th {
 	padding: .75em;
 	text-align: left;
 	border: 1px solid var(--accent);
 }
-	
-.weblog-title a {
-	text-decoration: none;
-	color: var(--foreground);
-}
 
+blockquote {
+	border-left: 3px solid var(--purple);
+	margin-left: 0;
+	padding-left: 1.5em;
+	font-style: italic;
+}
 </style>
 </head>
 <body>
 
-<header>
-	<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
-	{navigation}
-</header>
+<div class="container">
+	<header>
+		<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
+		{navigation}
+	</header>
 
-<main>
+	<main>
+		{body}
+		<hr>
+	</main>
 
-{body}
-
-<hr>
-
-</main>
-
-<footer>
-	<p>Made with <a href="https://weblog.lol">weblog.lol</a>.</p>
-</footer>
+	<footer>
+		<p>Made with <a href="https://weblog.lol">weblog.lol</a> · 💜</p>
+	</footer>
+</div>
 
 </body>
 </html>

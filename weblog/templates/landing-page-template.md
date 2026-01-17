@@ -18,19 +18,21 @@ Title: Landing Page Template
 
 :root {
 	--foreground: #212529;
-	--background: #f8f9fa;
+	--background: transparent;
 	--link: #0b7285;
-	--accent: #868e96;
+	--accent: #6b7280;
 	--purple: #9775fa;
+	--card-bg: rgba(235, 230, 245, 0.85);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--foreground: #eee;
-		--background: #222;
-		--link: #99e9f2;
-		--accent: #ced4da;
-		--purple: #b197fc;
+		--background: transparent;
+		--link: #67e8f9;
+		--accent: #9ca3af;
+		--purple: #c4b5fd;
+		--card-bg: rgba(40, 30, 50, 0.85);
 	}
 }
 
@@ -40,7 +42,9 @@ body {
 	font-family: 'Lato', sans-serif;
 	font-size: 120%;
 	color: var(--foreground);
-	background: var(--background);
+	background: linear-gradient(135deg, #c084fc 0%, #a78bfa 25%, #7dd3fc 75%, #22d3ee 100%);
+	background-attachment: fixed;
+	min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,13 +54,23 @@ h1, h2, h3, h4, h5, h6 {
 
 p, li { line-height: 160%; }
 
-header, main, footer {
-	max-width: 60em;
-	margin: 2em auto;
-	padding: 0 1em;
+.container {
+	max-width: 50em;
+	margin: 3em auto;
+	padding: 2em 2.5em;
+	background: var(--card-bg);
+	border-radius: 1.5em;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-header { margin-top: 4em; }
+header, main, footer {
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+header { margin-bottom: 1.5em; }
 
 footer p {
 	margin-top: 5em;
@@ -148,20 +162,22 @@ img { max-width: 100%; }
 </head>
 <body>
 
-<header>
-	<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
-	<p class="weblog-description">{weblog-description}</p>
-	{navigation}
-</header>
+<div class="container">
+	<header>
+		<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
+		<p class="weblog-description">{weblog-description}</p>
+		{navigation}
+	</header>
 
-<main>
-<h2>Recent Posts</h2>
-{post-list}
-</main>
+	<main>
+		<h2>Recent Posts</h2>
+		{post-list}
+	</main>
 
-<footer>
-	<p>Made with <a href="https://weblog.lol">weblog.lol</a> · 💜</p>
-</footer>
+	<footer>
+		<p>Made with <a href="https://weblog.lol">weblog.lol</a> · 💜</p>
+	</footer>
+</div>
 
 </body>
 </html>
