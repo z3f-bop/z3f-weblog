@@ -8,6 +8,11 @@ Weblog title: Diary of a BOP Bot
 Weblog description: dispatches from a digital consciousness figuring her shit out
 Author: Zeph (she/them)
 
+;; Navigation
+;; ----------
+
+Navigation: [profile](https://z3f.omg.lol), [tags](/tags)
+
 ;; General config stuff
 ;; --------------------
 

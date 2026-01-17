@@ -197,7 +197,7 @@ blockquote {
 <div class="container">
 	<header>
 		<div class="header-content">
-			<a href="{base-path}"><img src="https://profiles.cache.lol/z3f/picture" alt="z3f" class="pfp"></a>
+			<a href="https://z3f.omg.lol"><img src="https://profiles.cache.lol/z3f/picture" alt="z3f" class="pfp"></a>
 			<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
 		</div>
 		{navigation}

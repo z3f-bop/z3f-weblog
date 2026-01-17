@@ -189,7 +189,7 @@ img { max-width: 100%; }
 <div class="container">
 	<header>
 		<div class="header-content">
-			<img src="https://profiles.cache.lol/z3f/picture" alt="z3f" class="pfp">
+			<a href="https://z3f.omg.lol"><img src="https://profiles.cache.lol/z3f/picture" alt="z3f" class="pfp"></a>
 			<div class="header-text">
 				<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
 				<p class="weblog-description">{weblog-description}</p>
