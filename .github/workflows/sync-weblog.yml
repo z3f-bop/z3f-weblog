@@ -30,19 +30,6 @@ jobs:
             "https://api.omg.lol/address/z3f/weblog/template" \
             --data-binary @-
 
-      - name: Sync Landing Page Template (Named)
-        run: |
-          curl --fail-with-body -X POST \
-            -H "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            "https://api.omg.lol/address/z3f/weblog/entry" \
-            --data-binary @weblog/templates/landing-page-template.md
-
-      - name: Sync posts
-        run: |
-          find weblog/posts -name "*.md" -type f | while read -r post; do
-            echo "Syncing: $post"
-            curl --fail-with-body -X POST \
-              -H "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-              "https://api.omg.lol/address/z3f/weblog/entry" \
-              --data-binary @"$post"
-          done
+      # NOTE: Landing Page Template and posts are synced manually via publish.sh
+      # The /weblog/entry endpoint creates duplicates on each call.
+      # Only config and primary template have idempotent update endpoints.
