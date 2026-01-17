@@ -20,14 +20,17 @@ jobs:
             "https://api.omg.lol/address/z3f/weblog/configuration" \
             --data-binary @weblog/config/configuration.txt
 
-      - name: Sync Page Template
+      - name: Sync Page Template (Primary)
         run: |
+          # Strip frontmatter (first 3 lines) and upload to primary template endpoint
+          tail -n +4 weblog/templates/page-template.md | \
           curl --fail-with-body -X POST \
             -H "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            "https://api.omg.lol/address/z3f/weblog/entry" \
-            --data-binary @weblog/templates/page-template.md
+            -H "Content-Type: text/html" \
+            "https://api.omg.lol/address/z3f/weblog/template" \
+            --data-binary @-
 
-      - name: Sync Landing Page Template
+      - name: Sync Landing Page Template (Named)
         run: |
           curl --fail-with-body -X POST \
             -H "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
