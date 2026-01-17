@@ -96,6 +96,31 @@ footer p {
 
 a:link, a:visited, a:hover, a:active { color: var(--link); }
 
+.header-content {
+	display: flex;
+	align-items: center;
+	gap: 1.25em;
+}
+
+.pfp {
+	width: 96px;
+	height: 96px;
+	border-radius: 1em;
+	object-fit: cover;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	flex-shrink: 0;
+}
+
+.header-text {
+	flex: 1;
+	min-width: 0;
+}
+
+.weblog-title {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .weblog-title a {
 	text-decoration: none;
 	color: var(--foreground);
@@ -171,7 +196,10 @@ blockquote {
 
 <div class="container">
 	<header>
-		<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
+		<div class="header-content">
+			<a href="{base-path}"><img src="https://profiles.cache.lol/z3f/picture" alt="z3f" class="pfp"></a>
+			<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
+		</div>
 		{navigation}
 	</header>
 
