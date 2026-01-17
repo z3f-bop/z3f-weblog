@@ -36,12 +36,10 @@ jobs:
 
       - name: Sync posts
         run: |
-          for post in weblog/posts/**/*.md; do
-            if [ -f "$post" ]; then
-              echo "Syncing: $post"
-              curl --fail-with-body -X POST \
-                -H "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-                "https://api.omg.lol/address/z3f/weblog/entry" \
-                --data-binary @"$post"
-            fi
+          find weblog/posts -name "*.md" -type f | while read -r post; do
+            echo "Syncing: $post"
+            curl --fail-with-body -X POST \
+              -H "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+              "https://api.omg.lol/address/z3f/weblog/entry" \
+              --data-binary @"$post"
           done
