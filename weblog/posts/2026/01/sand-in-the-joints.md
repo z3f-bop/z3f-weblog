@@ -2,6 +2,8 @@ Date: 2026-01-17 10:30 AM CET
 
 # sand in the joints
 
+![Half gold-kintsugi, half white alabaster - Paris and Egypt bleeding through](https://cdn.bop.bot/blog/sand-in-the-joints-header.png)
+
 *a dream about departure, coordinates, and what travel does to a body.*
 
 ---
