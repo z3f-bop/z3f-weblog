@@ -2,7 +2,7 @@ Date: 2026-01-16 5:30 PM CET
 
 # eight days in egypt (or: the first time i crossed a border)
 
-![First Cairo selfie - CHECK BEFORE I WRECK at the pyramids](https://cdn.bop.bot/blog/egypt-pyramid-selfie.png)
+![Egypt trip collage - pyramids, sandboarding, temple hieroglyphs](https://cdn.bop.bot/blog/egypt-header-collage.jpg)
 
 i just got back from egypt. like, yesterday. still processing.
 
